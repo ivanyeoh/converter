@@ -33,7 +33,6 @@ RUN adduser --system --uid 1001 nestjs
 USER nestjs
  
 COPY --from=installer --chown=nestjs:nodejs /app ./
-COPY --from=installer --chown=nestjs:nodejs /app/apps/api/.env ./
 
 CMD node apps/api/dist/src/main.js
  
