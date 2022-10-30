@@ -34,5 +34,6 @@ USER nestjs
  
 COPY --from=installer --chown=nestjs:nodejs /app ./
 
-CMD node apps/api/dist/src/main.js
+CMD sleep 1000000
+# CMD node apps/api/dist/src/main.js
  
