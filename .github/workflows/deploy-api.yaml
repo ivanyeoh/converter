@@ -24,7 +24,6 @@ jobs:
             MSGRAPH_UPLOAD_DIR_ID=017PJEW2MXOS3VOQ5UZNDJOSWKILXHDAHU
           directory: ./apps/api
           include_env_vars: false
-
       - name: Publish to Registry
         uses: elgohr/Publish-Docker-Github-Action@v4
         with:
@@ -34,6 +33,10 @@ jobs:
           password: ${{ secrets.DOCKER_TOKEN }}
           snapshot: true
 
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
       - name: Copy files
         uses: appleboy/scp-action@master
         with:
@@ -43,8 +46,7 @@ jobs:
           port: 22
           source: "./docker-compose-prod.yml"
           target: "/root/converter"
-
-      - name: Restart services
+      - name: Deploy & restart
         uses: appleboy/ssh-action@v0.1.4
         with:
           host: converter.testrun.work
