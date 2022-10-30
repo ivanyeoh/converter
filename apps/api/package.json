@@ -19,6 +19,7 @@
     "test:e2e": "jest --config ./test/jest-e2e.json",
     "test:e2e:watch": "jest --config ./test/jest-e2e.json --watch"
   },
+  "packageManager": "npm@8.19.2",
   "dependencies": {
     "@azure/identity": "^3.0.0",
     "@microsoft/microsoft-graph-client": "github:ivanyeoh/msgraph-sdk-javascript#main",

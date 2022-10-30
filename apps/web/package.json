@@ -8,6 +8,7 @@
     "start": "next start -p 3311",
     "lint": "next lint"
   },
+  "packageManager": "npm@8.19.2",
   "dependencies": {
     "next": "^13.0.0",
     "react": "^18.2.0",
