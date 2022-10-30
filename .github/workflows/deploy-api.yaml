@@ -28,7 +28,7 @@ jobs:
       - name: Publish to Registry
         uses: elgohr/Publish-Docker-Github-Action@v4
         with:
-          context: ./apps/api
+          dockerfile: ./apps/api/Dockerfile
           name: ivanyeoh/converter-api
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_TOKEN }}
