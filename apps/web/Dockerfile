@@ -32,7 +32,7 @@ RUN addgroup --system --gid 1001 nodejs
 RUN adduser --system --uid 1001 nextjs
 USER nextjs
 
-COPY --from=sourcer /app/ .
+COPY --from=installer /app/ .
 WORKDIR /app/apps/web/
  
 CMD npm start
