@@ -54,5 +54,5 @@ jobs:
           script: |
             mkdir -p /root/converter
             cd /root/converter
-            docker compose -f docker-compose.prod.yml pull
-            docker compose -f docker-compose.prod.yml up --scale api=3 -d
+            docker compose -f docker-compose-prod.yml pull
+            docker compose -f docker-compose-prod.yml up --scale api=3 -d

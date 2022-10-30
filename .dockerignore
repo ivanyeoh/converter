@@ -5,3 +5,4 @@
 .git
 *Dockerfile*
 *docker-compose*
+.github
