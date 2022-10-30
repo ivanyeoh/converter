@@ -5,4 +5,4 @@ services:
     image: ivanyeoh/converter-api
     restart: always
     ports:
-      - 5550-5552:5500
+      - 5990-5992:5500
