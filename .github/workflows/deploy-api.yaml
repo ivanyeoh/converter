@@ -13,6 +13,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+      - name: Create .env 🤫
+        uses: DeveloperRic/action-create-env@v1.0.4
+        with:
+          full_text: |
+            MSGRAPH_TENANT_ID=0931384f-54da-48e5-b45a-599830eb4f1c
+            MSGRAPH_CLIENT_ID=d1604b04-4c5e-4954-92c8-e0955ef66e0c
+            MSGRAPH_CLIENT_SECRET=SJG8Q~ej8aUO8WNan2ZPpXFZmkfDNLdF12V8OcsX
+            MSGRAPH_UPLOAD_USER_ID=3a3e8c43-300b-4569-b0f3-ed59f4851e19
+            MSGRAPH_UPLOAD_DIR_ID=017PJEW2MXOS3VOQ5UZNDJOSWKILXHDAHU
+          directory: ${{ github.workspace }}
+          include_env_vars: false
       - name: Publish to Registry
         uses: elgohr/Publish-Docker-Github-Action@v4
         with:
@@ -27,16 +38,6 @@ jobs:
     needs: [build]
     steps:
       - uses: actions/checkout@v3
-      - name: Create .env 🤫
-        uses: DeveloperRic/action-create-env@v1.0.4
-        with:
-          full_text: |
-            MSGRAPH_TENANT_ID=0931384f-54da-48e5-b45a-599830eb4f1c
-            MSGRAPH_CLIENT_ID=d1604b04-4c5e-4954-92c8-e0955ef66e0c
-            MSGRAPH_CLIENT_SECRET=SJG8Q~ej8aUO8WNan2ZPpXFZmkfDNLdF12V8OcsX
-            MSGRAPH_UPLOAD_USER_ID=3a3e8c43-300b-4569-b0f3-ed59f4851e19
-            MSGRAPH_UPLOAD_DIR_ID=017PJEW2MXOS3VOQ5UZNDJOSWKILXHDAHU
-          include_env_vars: false
       - name: Copy files
         uses: appleboy/scp-action@master
         with:
@@ -44,7 +45,7 @@ jobs:
           username: ${{ secrets.SSH_USERNAME }}
           password: ${{ secrets.SSH_PASSWORD }}
           port: 22
-          source: "docker-compose-prod.yml,.env"
+          source: "./docker-compose-prod.yml"
           target: "/root/converter"
       - name: Deploy & restart
         uses: appleboy/ssh-action@v0.1.4
@@ -57,5 +58,5 @@ jobs:
             mkdir -p /root/converter
             cd /root/converter
             [ -f docker-compose-prod.yml ] && mv docker-compose-prod.yml docker-compose.yml
-            docker compose pull api
+            docker compose pull
             docker compose up --scale api=3 -d
