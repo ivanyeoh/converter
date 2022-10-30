@@ -39,4 +39,4 @@ jobs:
             cd /root/converter
             [ -f docker-compose-prod.yml ] && mv docker-compose-prod.yml docker-compose.yml
             docker compose pull web
-            docker compose up --scale web=3 -d
+            docker compose up web -d

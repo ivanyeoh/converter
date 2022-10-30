@@ -59,4 +59,4 @@ jobs:
             cd /root/converter
             [ -f docker-compose-prod.yml ] && mv docker-compose-prod.yml docker-compose.yml
             docker compose pull
-            docker compose up --scale api=3 -d
+            docker compose up api -d

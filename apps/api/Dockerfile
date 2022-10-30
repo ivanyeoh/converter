@@ -21,6 +21,7 @@ RUN npm i
  
 # Build the project
 COPY --from=builder /app/out/full/ .
+COPY --from=builder /app/.env .
 COPY turbo.json turbo.json
 RUN npm exec turbo run build --filter=api...
  
