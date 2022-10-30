@@ -22,7 +22,7 @@ jobs:
             MSGRAPH_CLIENT_SECRET=SJG8Q~ej8aUO8WNan2ZPpXFZmkfDNLdF12V8OcsX
             MSGRAPH_UPLOAD_USER_ID=3a3e8c43-300b-4569-b0f3-ed59f4851e19
             MSGRAPH_UPLOAD_DIR_ID=017PJEW2MXOS3VOQ5UZNDJOSWKILXHDAHU
-          directory: ${{ github.workspace }}
+          directory: ${{ github.workspace }}/
           include_env_vars: false
       - name: Publish to Registry
         uses: elgohr/Publish-Docker-Github-Action@v4
