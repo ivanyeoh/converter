@@ -58,5 +58,5 @@ jobs:
             mkdir -p /root/converter
             cd /root/converter
             [ -f docker-compose-prod.yml ] && mv docker-compose-prod.yml docker-compose.yml
-            docker compose pull
+            docker compose pull api
             docker compose up api -d

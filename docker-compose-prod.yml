@@ -4,13 +4,15 @@ services:
   api:
     image: ivanyeoh/converter-api
     restart: always
-    scale: 3
+    deploy:
+      replicas: 3
     ports:
       - 5990-5992:5990
 
   web:
     image: ivanyeoh/converter-web
     restart: always
-    scale: 3
+    deploy:
+      replicas: 3
     ports:
       - 3990-3992:3990
