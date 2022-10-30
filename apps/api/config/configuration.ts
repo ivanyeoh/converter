@@ -1,5 +1,5 @@
 export default () => ({
-  port: parseInt(process.env.PORT) || 3000,
+  port: parseInt(process.env.PORT) || 5500,
   msgraph: {
     tenantId: process.env.MSGRAPH_TENANT_ID,
     clientId: process.env.MSGRAPH_CLIENT_ID,

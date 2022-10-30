@@ -1,0 +1,8 @@
+version: '3.1'
+
+services:
+  converter-api:
+    image: ivanyeoh/converter-api
+    restart: always
+    ports:
+      - 5001-5003:5500

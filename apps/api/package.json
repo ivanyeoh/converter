@@ -29,7 +29,8 @@
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.2",
     "rxjs": "^7.2.0",
-    "shared-helpers": "*"
+    "shared-helpers": "*",
+    "tsconfig": "*"
   },
   "devDependencies": {
     "@nestjs/cli": "^9.1.5",
