@@ -13,6 +13,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+      - name: Create .env 🤫
+        uses: DeveloperRic/action-create-env@v1.0.4
+        with:
+          full_text: |
+            NEXT_PUBLIC_HOST=https://converter.testrun.work
+          directory: ./
+          include_env_vars: false
       - name: Publish to Registry
         uses: elgohr/Publish-Docker-Github-Action@v4
         with:

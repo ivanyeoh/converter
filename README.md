@@ -6,8 +6,18 @@ Convert file to another format
 
 To develop all apps and packages, run the following command:
 
-```
+```bash
 ./dev
 ```
 
-Visit localhost:9900
+Visit http://localhost:9900
+
+### Deploy
+
+To deploy to convert.testrun.work
+
+```bash
+git checkout master
+# change some files
+git push
+```
