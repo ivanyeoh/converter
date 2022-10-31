@@ -18,7 +18,7 @@ jobs:
         with:
           full_text: |
             NEXT_PUBLIC_HOST=https://converter.testrun.work
-          directory: ./
+          directory: ./apps/web/
           include_env_vars: false
       - name: Publish to Registry
         uses: elgohr/Publish-Docker-Github-Action@v4
