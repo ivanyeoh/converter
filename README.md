@@ -17,7 +17,7 @@ Visit http://localhost:9900
 To deploy to converter.testrun.work
 
 ```bash
-git checkout master
+git checkout main
 # change some files
 git push
 ```
