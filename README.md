@@ -14,7 +14,7 @@ Visit http://localhost:9900
 
 ### Deploy
 
-To deploy to convert.testrun.work
+To deploy to converter.testrun.work
 
 ```bash
 git checkout master
