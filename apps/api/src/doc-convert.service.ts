@@ -9,6 +9,7 @@ import { Client } from '@microsoft/microsoft-graph-client';
 import { TokenCredentialAuthenticationProvider } from '@microsoft/microsoft-graph-client/authProviders/azureTokenCredentials';
 import { ClientSecretCredential } from '@azure/identity';
 import { ConfigService } from '@nestjs/config';
+import { ReadableStream } from 'stream/web';
 
 @Injectable()
 export class DocConvertService {
@@ -44,7 +45,7 @@ export class DocConvertService {
     const result = await this.client
       .api(this.buildItemIdConvertUrl(itemId, format))
       .get();
-    return result;
+    return result as ReadableStream;
   }
 
   async uploadFile(file: Express.Multer.File) {

@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+docker compose up --build -d
+npm i
+npm run dev

@@ -15,9 +15,9 @@ describe('AppController (e2e)', () => {
     await app.init();
   });
 
-  it('/from-docx-to-pdf (POST)', () => {
+  it('/docx-to-pdf (POST)', () => {
     return request(app.getHttpServer())
-      .post('/from-docx-to-pdf')
+      .post('/docx-to-pdf')
       .attach('file', 'test/fixtures/test.docx')
       .expect(201)
       .expect('Content-Type', 'application/pdf; charset=utf-8');
